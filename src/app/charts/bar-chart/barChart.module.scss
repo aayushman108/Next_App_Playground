@@ -8,9 +8,9 @@
     &__one {
       max-width: var(--max-width);
       width: 100%;
-      aspect-ratio: 1.8;
+      aspect-ratio: 1.5;
       margin: 0 auto;
-      border: 2px solid red;
+      // border: 2px solid red;
       padding: var(--section-padding);
       font-size: 1rem;
       @include responsive-for($md) {
@@ -19,7 +19,6 @@
       }
       @include responsive-for($sm) {
         font-size: 0.75em;
-        aspect-ratio: 1;
       }
     }
   }
@@ -35,5 +34,9 @@
     color: white;
   }
   .arrow_icon {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -100%);
   }
 }

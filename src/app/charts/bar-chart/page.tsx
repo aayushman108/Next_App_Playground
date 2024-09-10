@@ -18,6 +18,7 @@ import {
   Label,
   Rectangle,
   BarProps,
+  Legend,
 } from "recharts";
 import styles from "./barChart.module.scss";
 
@@ -99,6 +100,7 @@ export default function BarChartPage() {
     };
   }, []);
 
+  // MARK: RENDER SHAPE
   const renderShape = useCallback(
     (props: BarProps) => {
       // eslint-disable-next-line react/prop-types
@@ -126,12 +128,15 @@ export default function BarChartPage() {
     [activeBar]
   );
 
+  // MARK: RENDER TOOLTIP
   const renderTooltip = (props: any) => {
     if (!props.active) {
       return;
     }
+
     const tooltip =
       tooltipRef.current && tooltipRef.current.getBoundingClientRect();
+
     const box =
       barChartRef.current && barChartRef.current.getBoundingClientRect();
 
@@ -140,7 +145,7 @@ export default function BarChartPage() {
     // eslint-disable-next-line react/prop-types
     const { name, uv, pv, amt } = props.payload[0].payload;
 
-    let tooltipContainerStyles, tooltipArrowStyles;
+    let tooltipContainerStyles;
 
     tooltipContainerStyles = {
       position: "absolute",
@@ -156,13 +161,6 @@ export default function BarChartPage() {
           : box?.x && tooltip?.x && box?.x - tooltip?.x > 0
           ? "end"
           : "center",
-    };
-    tooltipArrowStyles = {
-      position: "absolute",
-      top: "100%",
-      left: "50%",
-      transform: "translate(-50%, -100%)",
-      // border: "1px solid green",
     };
 
     return (
@@ -187,7 +185,7 @@ export default function BarChartPage() {
         </div>
         <BiSolidDownArrow
           fontSize={barSize / 2}
-          style={tooltipArrowStyles as CSSProperties}
+          className={styles.arrow_icon}
           color="blue"
         />
       </div>
@@ -204,7 +202,7 @@ export default function BarChartPage() {
               //   height={300}
               data={data}
               margin={{
-                top: 150,
+                top: barSize * 4,
                 right: 10,
                 left: 30,
                 bottom: 30,
@@ -242,16 +240,22 @@ export default function BarChartPage() {
                 />
               </YAxis>
 
+              {/* TOOLTIP */}
               <Tooltip
                 content={renderTooltip}
                 cursor={false}
                 position={tooltipPosition}
                 active={showTooltip}
               />
-              {/* <Legend /> */}
+
+              {/* LEGEND */}
+              <Legend verticalAlign="top" iconSize={(barSize * 2) / 3} />
+
               {/* CARTESIAN GRID */}
               {/* <CartesianGrid strokeDasharray="3 3" /> */}
               <CartesianGrid strokeWidth={0.4} height={0.1} widths="100%" />
+
+              {/* BAR */}
               <Bar
                 dataKey="pv"
                 fill="#8884d8"
