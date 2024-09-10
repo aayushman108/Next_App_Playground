@@ -1,6 +1,11 @@
 :root {
-  --max-width: 1100px;
+  --max-width: 1400px;
+  --section-padding: 16px;
   --border-radius: 12px;
+  // device-size
+  --sm-screen: 576;
+  --md-screen: 768;
+  --lg-screen: 992;
   // color-primary
   --color-primary-100: #4da2ff;
   --color-primary-200: #268eff;
@@ -15,6 +20,7 @@
   --background-color-100: #ffffff;
   --background-color-200: #e6e3e3;
   --background-color-300: #ada6a6;
+  --background-color-400: #2c2c2c;
 
   // color
   --color-100: #2c2c2c;

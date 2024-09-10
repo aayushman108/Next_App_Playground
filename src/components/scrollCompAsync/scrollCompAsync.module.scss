@@ -1,0 +1,23 @@
+@import "../../styles/utils";
+.scroll_comp_async {
+  width: 100%;
+  height: 100vh;
+  @include d-flex(column, center, center);
+  .header {
+    font-size: fontSize(4xl);
+    font-weight: 700;
+    color: color(primary, 100);
+    margin-bottom: 2rem;
+  }
+  .list {
+    border: 1px solid color(primary, 300);
+    padding: 1rem;
+    width: 500px;
+    height: 200px;
+    overflow: auto;
+    & > .li {
+      font-size: fontSize(xl);
+      font-weight: 500;
+    }
+  }
+}

@@ -21,7 +21,7 @@
     "no-unused-vars":"off",
     "eqeqeq": "error",
     "curly": "warn",
-    "consistent-return":"error",
+    // "consistent-return":"error",
     "default-case": "warn",
     "no-var":"error",
     "no-duplicate-imports": "error",

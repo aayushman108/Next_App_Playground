@@ -1,0 +1,9 @@
+.scroll_comp_card {
+  figure {
+    width: 100%;
+    aspect-ratio: 3;
+    img {
+      object-fit: cover;
+    }
+  }
+}

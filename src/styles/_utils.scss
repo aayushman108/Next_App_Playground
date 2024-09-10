@@ -11,8 +11,14 @@
   border: 0;
 }
 
+$xs: 410;
+$sm: 576;
+$md: 768;
+$lg: 992;
+$xl: 1200;
+
 @mixin responsive-for($width) {
-  @media screen and (max-width: $width) {
+  @media screen and (max-width: #{$width}px) {
     @content;
   }
 }

@@ -1,3 +1,6 @@
 .header {
-  color: var(--color-secondary-100);
+  // color: var(--color-secondary-100);
+  &__logo {
+    color: var(--color-primary-100);
+  }
 }

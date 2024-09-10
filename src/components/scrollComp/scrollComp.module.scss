@@ -1,0 +1,33 @@
+@import "../../styles/utils";
+.scroll_comp {
+  color: var(--color-secondary-100);
+  width: 100%;
+  height: 100vh;
+  @include d-flex(row, center, center);
+  &__box {
+    width: 80%;
+    height: 90%;
+    border: 2px solid var(--color-primary-200);
+    & > h1 {
+      font-size: fontSize(4xl);
+      color: color(primary, 200);
+    }
+    .infinite_scroll {
+      width: 100%;
+      height: 600px;
+      border: 2px solid color(primary, 300);
+      margin-top: 3rem;
+      overflow-y: scroll;
+      .box_item {
+        transition: all 1s ease-in-out;
+        opacity: 0;
+        transform: translateY(100px);
+        margin-bottom: 1rem;
+        &.in_view {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

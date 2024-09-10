@@ -1,0 +1,39 @@
+@import "../../../styles/utils";
+
+.bar_chart {
+  width: 100%;
+  &__section {
+    overflow: hidden;
+    padding: var(--section-padding);
+    &__one {
+      max-width: var(--max-width);
+      width: 100%;
+      aspect-ratio: 1.8;
+      margin: 0 auto;
+      border: 2px solid red;
+      padding: var(--section-padding);
+      font-size: 1rem;
+      @include responsive-for($md) {
+        font-size: 0.75em;
+        aspect-ratio: 1.2;
+      }
+      @include responsive-for($sm) {
+        font-size: 0.75em;
+        aspect-ratio: 1;
+      }
+    }
+  }
+}
+
+.tooltip {
+  position: relative;
+  &_content {
+    // border: 2px solid green;
+    border-radius: var(--border-radius);
+    padding: 10px;
+    background-color: blue;
+    color: white;
+  }
+  .arrow_icon {
+  }
+}
